@@ -36,22 +36,22 @@ Dataset is composed of 7043 rows and 21 columns.
 # Methodology
 The project follows these key steps:
 
-1. Data Preprocessing: Cleaning and preparing the data for analysis.
-2. Exploratory Data Analysis: Exploring relationship between features and using visualizations techniques to discover insights.
-3. Feature Engineering: Selecting and transforming relevant features to enhance model performance. 
-4. Model Development: Implementing machine learning algorithms to predict Churn.
-5. Model Evaluation: Assessing the model's accuracy and reliability using appropriate metrics.
-6. Key Insights
+1. [Go to Business Suggestions](2-Exploratory-Data-Analysis)
+2. [Go to Exploratory Data Analysis](#2-Exploratory-Data-Analysis)
+3. [Go to Feature Engineering](#3-Feature-Engineering) 
+4. [Go to Model Deployment](#4-Model-Deployment)
+5. [Go to Model Evaluation](#5-Model-Evaluation)
+6. [Go to Key Findings](#6-Key-Findings)
 7. [Go to Business Suggestions](#7-Business-Recommendations) 
 
 
-# 1) Data Preprocesssing:
+# 1. Data Preprocesssing
 In the part of the project I loaded the data and checked for duplicate values and null values. Furthermore I explored the data types and discovered that all were numeric with the exception of two. 
 
 df.head() and df.columns are used to explore the feature of the dataset and begin developing questions to explore during EDA. 
 
 
-# 2) Exploratory Data Analysis:
+# 2. Exploratory Data Analysis
 
  ## Exploring the target variables 
  ![image](https://github.com/user-attachments/assets/58bca2c1-89a4-42ee-b362-14f87f9de364)
@@ -201,7 +201,7 @@ This provides evidence that suggests that customers who have Fiber optic as a se
 - Senior Citizens are correlated with Payement method being Electronic check at .17
 
 
- # 3) Feature Engineering:
+ # 3. Feature Engineering
 
 To prepare the dataset for machine learning, I performed several feature engineering steps to convert categorical data into a numerical format suitable for modeling:
 
@@ -227,7 +227,7 @@ df_encoded['Churn'] = df_encoded['Churn'].map(binary_map)
 
 These steps ensured all features were fully numeric and compatible with scikit-learn and XGBoost, while preserving the semantic meaning of each variable.
 
-# 4) Model Development:
+# 4. Model Development
 
 ## Models developed:
 
@@ -270,7 +270,7 @@ The XGBoost model’s feature importance strongly reinforces the patterns uncove
 
 These model-driven insights validate the EDA and highlight specific, high-leverage features that Telco can focus on to improve retention strategies.
 
-# 5) Model Evaluation: 
+# 5. Model Evaluation 
 
 ## Logistic Regression:
 
@@ -317,13 +317,8 @@ weighted avg       0.78      0.75      0.76      1407
 
 
 
-## Conclusion
-### Model Comparison Summary
-🔥 Here’s a compelling **Conclusion & Business Recommendations** section for your README, weaving all your insights into a strong narrative for Telco stakeholders:
 
----
-
-## Conclusion & Business Recommendations
+# 6. Key Findings 
 
 This customer churn analysis of Telco’s customer base uncovered several **critical insights** that can drive business strategy and customer retention efforts:
 
