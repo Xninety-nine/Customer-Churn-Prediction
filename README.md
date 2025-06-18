@@ -1,6 +1,8 @@
 # Customer-Churn-Prediction
 
-Image here
+
+
+
 
 
 ## Overview
@@ -122,26 +124,86 @@ df.head() and df.columns are used to explore the feature of the dataset and begi
 ## Observation:
 - Regardless of tenure, customers who churned were on average paying more than their counter parts who did not churn. 
 
-### Exploring correlation between Salary, Distance and Decision to try new coffee selection
+## Customer Distribution by Churn and Payment Method
+![image](https://github.com/user-attachments/assets/5e51712b-4859-4bb1-bb22-7281141a49a2)
 
+## Observation: Customer Churn and Payment Method
+- Of the 15% of customers who churned used Electronic check as their payment method. This far exceeds the other categories of customers who churned which were almost identical. 
 
+## Distribution of Churn and Dependents 
+![image](https://github.com/user-attachments/assets/108e4d5c-e172-489f-995c-68f29a494646)
+
+## Observation
+- Of customers who did not churn 65% did not have dependents
+- Of customers who did churn 82.5% did not have dependents.
+- This shows customers who do not have dependents churn at slightly higher rates.
 
  
 
 
-## Exploring how Salary plays a role in decision to purchase new potential selection of coffee
+## Churn Distribution based on Gender and type of Internet Service 
+![image](https://github.com/user-attachments/assets/1281bb34-4092-4389-b872-65858d121eca)
 
+## Observations:
+- Regardless of Gender customers where far more likely to churn if they had Fiber optic as an Internet service.
+- This strongly suggest that customers with Fiber optic internet service were disatified by the quality.
+- 35% of Females who did not churn had Fiber optic as an internet service.
+- 70% of Females who DID churn had Fiber optic as an internet service. 
+
+This clearly shows that having Fiber optic as an internet service has a high association with Churn. 
 
 
 ### Insights:
- 
+- Internet Service being Fiber optic is a key factor in determing customer churn.
+- What could be the reason for this? Bad internet service?
+
+## Churn and Online Security
+![image](https://github.com/user-attachments/assets/0869ad7a-8865-4e77-97e2-ad0bf8fcf928)
+
+## Observation
+- A vast majority of customers who churned did not have Online Security.
+
+## Churn Distribution and Tech Support 
+![image](https://github.com/user-attachments/assets/a0f54676-10f2-48d4-97c3-0f2dedfa87ce)
+
+## Observation
+- Customers who churned were far more likely to have No tech support. 
+
+
+## Correlation Matrix of Customer Churn Dataset
+![image](https://github.com/user-attachments/assets/c1d20d55-c0e7-43db-8bba-b8a1f6971686)
+
+
+### Observations:
+Churn and Positive associations 
+
+- Churn is positively corrlelated with Contract being Month-to-month at .40
+- Churn is positively correlated with Payment Method being Electronic check at .30
+- Churn is positively correlated with Internet being Fiber optic at .31 
+- Internet Fiber Optic is highly postively correlated with higher Monthly charges at .79
+
+Churn and Negative associations
+
+- Churn is negatively correlated with Contract type being Two year at -.30
+- Churn is negatively correlated with Contract type being One year at -.18
+- Churn is negatively correlated with Not having internet service at -.23
+
+
+## Key insights
+- Monthly Charges are positively correlated with Internet being Fiber optic at .79. This answers the question as to why Customers with Fiber Optic internet service were churing at a higher rate, they are paying more per month. 
+- Monthly Charges are negatively correlated with Internet being Fiber optic at -.79
+This provides evidence that suggests that customers who have Fiber optic as a service will pay more per month. This is vital information since in EDA I discovered that customers who churned were paying more per month on average. 
+
+- Senior Citizens are correlated with Internet Service being Fiber optic at .25
+- Senior Citizens are correlated with Contratc type being Month-to-month at .14
+- Senior Citizens are correlated with Payement method being Electronic check at .17
 
 
  # 3) Feature Engineering:
 
 To prepare the dataset for machine learning, I performed several feature engineering steps to convert categorical data into a numerical format suitable for modeling:
 
-🔢 1. One-Hot Encoding for Multi-Class Categorical Features
+1. One-Hot Encoding for Multi-Class Categorical Features
 I used pandas.get_dummies() to transform multi-class categorical variables (such as 'InternetService', 'PaymentMethod', and 'Contract') into binary indicator variables. This method ensures that the model treats each category independently, without implying any ordinal relationship between them.
 
 Example:
@@ -154,7 +216,7 @@ This created new columns like:
 
 - Contract_Two year
 
-✅ 2. Binary Encoding for Yes/No Features
+2. Binary Encoding for Yes/No Features
 For binary categorical features such as 'Partner', 'Dependents', 'PhoneService', 'PaperlessBilling', and 'Churn', I applied a simple mapping of 'Yes' to 1 and 'No' to 0. This encoding preserves the binary nature of these variables in a form that machine learning models can interpret directly.
 
 Example:
