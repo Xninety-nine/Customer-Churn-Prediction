@@ -229,19 +229,78 @@ These steps ensured all features were fully numeric and compatible with scikit-l
 
 ## Models developed:
 
-- Decision Tree - Entropy model - no max_depth
-- Decision Tree - Gini impurity model - no max_depth
-- Decision Tree - Entropy model - max depth 3
-- Decision Tree - Gini impurity model - max depth 3
-- Random Forest 
+- Logistic Regression - Hyperparameter Tunning - Best Parameters {'C': 85.92819985213441, 'max_iter': 100, 'penalty': 'l2', 'solver': 'lbfgs'}
+- Random Forest Classifier - Hyperparameter Tunning - Best Parameters: OrderedDict({'max_depth': 13, 'max_features': 'sqrt', 'min_samples_leaf': 1, 'min_samples_split': 2, 'n_estimators': 300})
+- XGBoost Model - Hyperparameter Tunning - Best Params: {'subsample': 1.0, 'n_estimators': 100, 'min_child_weight': 1, 'max_depth': 10, 'learning_rate': 0.05, 'colsample_bytree': 0.6}
+
+
+## SMOTE
+- After evluating model metrics I decided to experiment with SMOTE to see if I could improve Recall scores for Churn. SMOTE stands for Synthetic Minority Over-sampling Technique. It's a powerful method used to address class imbalance in datasets. Since this dataset was composed of 26% churn customers it was imbalanced which means that my 'Churn' category was significantly underrepresented. 
+
+Why use SMOTE? 
+- I used SMOTE because m particularly for binary classification problems when a model learns from imbalanced datasets the models could develop a bias for the majority class, in this case customers who did not churn. This could lead to poor performance in classifying minority class i.e. customer who did churn. 
+
+## Feature Importance from Random Forest Model
+
+![image](https://github.com/user-attachments/assets/91e42d8f-3499-4a01-a9af-e97327d21d15)
+
+## Observations: Feature Importance
+- The most imporant feature that the model use to predict customer Churn was type of Contract Month-to-month. This aligns with what I discovered during EDA (Month-to-month contracts are most likely to churn)
+- The second most important feature is Tenure, This is also align with what I discovered during EDA, The longer a customer has been with Telco the less likely they are to Churn. 
+- Third most important features were Contract type being Two_year and Internet being Fiber optic.
+
+## Top 5 Important Features XGBoost Model
+![image](https://github.com/user-attachments/assets/7a425e1e-7c57-445a-81b4-0e4b04c735af)
+
+## Observation: Feature Importance
+- Top feature by far for XGBoost model was Contract_Month-to-month. This is reasurring sicne I came to a similar conclusion during EDA. 
 
 
 # 5) Model Evaluation: 
-- Decision Tree - Entropy model - no max_depth: Accuracy = 0.9915966386554622
-- Decision Tree - Gini impurity model - no max_depth: Accuracy = 0.9831932773109243
-- Decision Tree - Entropy model - max depth 3: Accuracy = 0.907563025210084
-- Decision Tree - Gini impurity model - max depth 3: Accuracy = 0.907563025210084
-- Random Forest: Accuracy = 0.9663865546218487
+
+##Logistic Regression:
+
+Test Accuracy: 0.7912400455062572
+Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.84      0.89      0.86      1300
+           1       0.62      0.52      0.56       458
+
+    accuracy                           0.79      1758
+   macro avg       0.73      0.70      0.71      1758
+weighted avg       0.78      0.79      0.79      1758
+
+
+ 
+##Random Forest Classifier
+
+Test Accuracy: 0.7569296375266524
+Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.88      0.78      0.82      1033
+           1       0.53      0.70      0.61       374
+
+    accuracy                           0.76      1407
+   macro avg       0.71      0.74      0.71      1407
+weighted avg       0.79      0.76      0.77      1407
+
+
+##XGBoost Model 
+
+Test ROC AUC: 0.8191861097162617
+[[806 227]
+ [120 254]]
+              precision    recall  f1-score   support
+
+           0       0.87      0.78      0.82      1033
+           1       0.53      0.68      0.59       374
+
+    accuracy                           0.75      1407
+   macro avg       0.70      0.73      0.71      1407
+weighted avg       0.78      0.75      0.76      1407
+
 
 
 ## Conclusion
