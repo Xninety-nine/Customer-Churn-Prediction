@@ -41,6 +41,8 @@ The project follows these key steps:
 3. Feature Engineering: Selecting and transforming relevant features to enhance model performance. 
 4. Model Development: Implementing machine learning algorithms to predict Churn.
 5. Model Evaluation: Assessing the model's accuracy and reliability using appropriate metrics.
+6. Key Insights
+7. [Go to Business Suggestions](#7-Business-Recommendations) 
 
 
 # 1) Data Preprocesssing:
@@ -240,7 +242,8 @@ These steps ensured all features were fully numeric and compatible with scikit-l
 Why use SMOTE? 
 - I used SMOTE because m particularly for binary classification problems when a model learns from imbalanced datasets the models could develop a bias for the majority class, in this case customers who did not churn. This could lead to poor performance in classifying minority class i.e. customer who did churn. 
 
-## Feature Importance from Random Forest Model
+## Model Insights: Feature Importance
+The XGBoost model’s feature importance strongly reinforces the patterns uncovered during exploratory data analysis (EDA), providing a high degree of confidence in both the model and the underlying business insights.
 
 ![image](https://github.com/user-attachments/assets/91e42d8f-3499-4a01-a9af-e97327d21d15)
 
@@ -256,9 +259,20 @@ Why use SMOTE?
 - Top feature by far for XGBoost model was Contract_Month-to-month. This is reasurring sicne I came to a similar conclusion during EDA. 
 
 
+## Top Feature - Contract_Month-to-month
+- This was the most influential feature in predicting customer churn. It confirms what was observed in the EDA — customers on month-to-month contracts are significantly more likely to churn, likely due to the lack of long-term commitment or incentives to stay.
+
+## Second Most Important Feature - Tenure 
+- The longer a customer has been with Telco, the lower their likelihood of churning. This makes intuitive sense and aligns perfectly with the data: new or short-tenure customers are at higher risk of leaving.
+
+## Other Key Features:
+- InternetService_Fiber optic was also among the top contributors. As noted in the EDA, customers with Fiber Optic internet were more likely to churn, possibly due to higher costs or perceived service dissatisfaction.
+
+These model-driven insights validate the EDA and highlight specific, high-leverage features that Telco can focus on to improve retention strategies.
+
 # 5) Model Evaluation: 
 
-##Logistic Regression:
+## Logistic Regression:
 
 Test Accuracy: 0.7912400455062572
 Classification Report:
@@ -273,7 +287,7 @@ weighted avg       0.78      0.79      0.79      1758
 
 
  
-##Random Forest Classifier
+## Random Forest Classifier
 
 Test Accuracy: 0.7569296375266524
 Classification Report:
@@ -287,7 +301,7 @@ Classification Report:
 weighted avg       0.79      0.76      0.77      1407
 
 
-##XGBoost Model 
+## XGBoost Model 
 
 Test ROC AUC: 0.8191861097162617
 [[806 227]
@@ -305,14 +319,84 @@ weighted avg       0.78      0.75      0.76      1407
 
 ## Conclusion
 ### Model Comparison Summary
-After executing the Random Forest model, the results were nearly identical to those of my best-performing model (Model 4). While the Random Forest showed slightly higher metrics and was able to classify three new customers as "YES" for purchasing Hidden Farm Coffee, the overall predicted purchase percentage increased only marginally—remaining around 69.65%, which is still below the target threshold of 70%.
+🔥 Here’s a compelling **Conclusion & Business Recommendations** section for your README, weaving all your insights into a strong narrative for Telco stakeholders:
+
+---
+
+## Conclusion & Business Recommendations
+
+This customer churn analysis of Telco’s customer base uncovered several **critical insights** that can drive business strategy and customer retention efforts:
+
+###  Key Findings
+
+* **Churn Rate**: Approximately **27% of customers** in the dataset churned — a significant portion indicating potential revenue loss if not addressed.
+
+* **Contract Type Matters**:
+
+  * A staggering **89% of customers who churned were on Month-to-Month contracts**.
+  * Only **2%** were on **1-year contracts**, and **1%** on **2-year contracts**.
+    → 📉 **Shorter contracts strongly correlate with higher churn.**
+
+* **Monthly Charges Are a Strong Predictor**:
+  Customers who churned consistently paid **more per month**, regardless of contract type.
+
+  * On **Month-to-Month contracts**, churned customers paid \~\$12 more than those who stayed.
+  * On **2-Year contracts**, the gap increased to **\$26**.
+    →  Higher charges are strongly associated with churn risk.
+
+* **Fiber Optic Internet & Churn**:
+
+  * Customers with **Fiber Optic** internet were **far more likely to churn**.
+  * Among females who churned, **70% had Fiber Optic**, vs. **35%** of those who did not.
+  * This may point to **pricing dissatisfaction or service quality issues**.
+
+* **Lack of Support Services Increases Churn**:
+
+  * Most customers who churned did **not have Online Security or Tech Support**.
+  * These services might act as **"stickiness" features** and encourage retention.
+
+* **Payment Method as a Signal**:
+
+  * **Electronic check** is the most common payment method among churned customers (15%).
+  * This may reflect a lower engagement or digital trust with the brand.
+
+* **Dependents & Churn**:
+
+  * **82.5% of churned customers had no dependents**, compared to 65% of those who stayed.
+  * This may reflect differing priorities, risk aversion, or income stability.
+
+# 7. Business Recommendations
+
+1. **Target High-Risk Customers on Month-to-Month Contracts**
+
+   * Offer incentives to **upgrade to longer-term contracts**.
+   * Consider **discounts or loyalty programs** for high-paying month-to-month users.
+
+2. **Investigate Fiber Optic Satisfaction**
+
+   * Launch a **customer satisfaction survey** for Fiber Optic users.
+   * Assess whether churn is due to **price sensitivity**, **service quality**, or both.
+
+3. **Create Tiered Retention Offers Based on Monthly Charges**
+
+   * Segment customers by price brackets (e.g., \$70–\$100/month) and contract type.
+   * Tailor retention efforts (e.g., personalized discounts, added services) to high-paying users.
+
+4. **Bundle Support Services (Online Security, Tech Support)**
+
+   * Customers without these services churn more — offering them as part of packages may reduce churn.
+
+5. **Optimize Onboarding for Electronic Check Users**
+
+   * Explore payment experience friction or lack of auto-payment options.
+   * Test **nudges** toward more stable digital payment methods.
+
+6. **Deploy Predictive Thresholds**
+
+   * Use churn probability thresholds based on **contract-type-specific quartiles** to preemptively flag at-risk customers.
+
+---
+
+This project not only highlights the power of predictive modeling in identifying churn risks but also demonstrates how **data-driven insights can directly inform retention strategy and operational decisions**.
 
 
-# My Recommendations for RR Diner Coffee Based on Decision Tree and Random Forest Analysis. 
-- Based on the current data, I would advise RR Diner Coffee stakeholders not to proceed with the Hidden Farm deal at this time. The margin of uncertainty is too narrow, and the financial risk is too high given the minimal projected return.
-
-- I recommend increasing marketing efforts within a 3-mile radius of each diner location. Customers living closer to the stores were significantly more likely to purchase Hidden Farm coffee. Targeted campaigns in these zones could help attract new loyal customers and boost future revenue.
-
-- While this deal may not be ideal right now, it could become profitable in the future if the loyal customer base expands—especially within the high-conversion radius.
-
-- Regardless of income level, proximity was a stronger predictor of purchase intent. Customers living within 3 miles were consistently more likely to buy Hidden Farm coffee.
