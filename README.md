@@ -1,6 +1,7 @@
-# Customer-Churn-Prediction
+# Customer-Churn-Prediction-Using-Machine-Learning
 
 
+![image](https://github.com/user-attachments/assets/47c1934c-97bf-4d00-8b9c-ccf1ea3794e6)
 
 
 
@@ -36,7 +37,7 @@ Dataset is composed of 7043 rows and 21 columns.
 # Methodology
 The project follows these key steps:
 
-1. [Go to Business Suggestions](2-Exploratory-Data-Analysis)
+1. [Go to Data Preprocesssing](#1-Data-Preprocessing)
 2. [Go to Exploratory Data Analysis](#2-Exploratory-Data-Analysis)
 3. [Go to Feature Engineering](#3-Feature-Engineering) 
 4. [Go to Model Deployment](#4-Model-Deployment)
