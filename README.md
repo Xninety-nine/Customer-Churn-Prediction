@@ -241,7 +241,7 @@ These steps ensured all features were fully numeric and compatible with scikit-l
 - After evluating model metrics I decided to experiment with SMOTE to see if I could improve Recall scores for Churn. SMOTE stands for Synthetic Minority Over-sampling Technique. It's a powerful method used to address class imbalance in datasets. Since this dataset was composed of 26% churn customers it was imbalanced which means that my 'Churn' category was significantly underrepresented. 
 
 Why use SMOTE? 
-- I used SMOTE because m particularly for binary classification problems when a model learns from imbalanced datasets the models could develop a bias for the majority class, in this case customers who did not churn. This could lead to poor performance in classifying minority class i.e. customer who did churn. 
+- I used SMOTE because it is particularly useful for binary classification problems when a model learns from imbalanced datasets the models could develop a bias for the majority class, in this case customers who did not churn. This could lead to poor performance in classifying minority class i.e. customer who did churn. 
 
 ## Model Insights: Feature Importance
 The XGBoost model’s feature importance strongly reinforces the patterns uncovered during exploratory data analysis (EDA), providing a high degree of confidence in both the model and the underlying business insights.
@@ -249,8 +249,8 @@ The XGBoost model’s feature importance strongly reinforces the patterns uncove
 ![image](https://github.com/user-attachments/assets/91e42d8f-3499-4a01-a9af-e97327d21d15)
 
 ## Observations: Feature Importance
-- The most imporant feature that the model use to predict customer Churn was type of Contract Month-to-month. This aligns with what I discovered during EDA (Month-to-month contracts are most likely to churn)
-- The second most important feature is Tenure, This is also align with what I discovered during EDA, The longer a customer has been with Telco the less likely they are to Churn. 
+- The most imporant feature that the model used to predict customer Churn was type of Contract Month-to-month. This aligns with what I discovered during EDA (Month-to-month contracts are most likely to churn)
+- The second most important feature is Tenure, This also align with what I discovered during EDA, The longer a customer has been with Telco the less likely they are to Churn. 
 - Third most important features were Contract type being Two_year and Internet being Fiber optic.
 
 ## Top 5 Important Features XGBoost Model
