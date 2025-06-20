@@ -148,7 +148,7 @@ df.head() and df.columns are used to explore the feature of the dataset and begi
 ![image](https://github.com/user-attachments/assets/1281bb34-4092-4389-b872-65858d121eca)
 
 ## Observations:
-- Regardless of Gender customers where far more likely to churn if they had Fiber optic as an Internet service.
+- Regardless of Gender customers were far more likely to churn if they had Fiber optic as an Internet service.
 - This strongly suggest that customers with Fiber optic internet service were disatified by the quality.
 - 35% of Females who did not churn had Fiber optic as an internet service.
 - 70% of Females who DID churn had Fiber optic as an internet service. 
