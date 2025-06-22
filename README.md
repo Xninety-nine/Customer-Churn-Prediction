@@ -276,30 +276,38 @@ These model-driven insights validate the EDA and highlight specific, high-levera
 ## Logistic Regression:
 
 Test Accuracy: 0.7912400455062572
+
+
+
 Classification Report:
+
               precision    recall  f1-score   support
 
            0       0.84      0.89      0.86      1300
            1       0.62      0.52      0.56       458
 
     accuracy                           0.79      1758
-   macro avg       0.73      0.70      0.71      1758
-weighted avg       0.78      0.79      0.79      1758
+    macro avg      0.73      0.70      0.71      1758
+    weighted avg   0.78      0.79      0.79      1758
 
 
  
 ## Random Forest Classifier
 
 Test Accuracy: 0.7569296375266524
+
+
+
 Classification Report:
+
               precision    recall  f1-score   support
 
            0       0.88      0.78      0.82      1033
            1       0.53      0.70      0.61       374
 
     accuracy                           0.76      1407
-   macro avg       0.71      0.74      0.71      1407
-weighted avg       0.79      0.76      0.77      1407
+    macro avg       0.71      0.74     0.71      1407
+    weighted avg    0.79      0.76     0.77      1407
 
 
 ## XGBoost Model 
@@ -307,14 +315,17 @@ weighted avg       0.79      0.76      0.77      1407
 Test ROC AUC: 0.8191861097162617
 [[806 227]
  [120 254]]
+
+
+ 
               precision    recall  f1-score   support
 
            0       0.87      0.78      0.82      1033
            1       0.53      0.68      0.59       374
 
     accuracy                           0.75      1407
-   macro avg       0.70      0.73      0.71      1407
-weighted avg       0.78      0.75      0.76      1407
+    macro avg      0.70      0.73      0.71      1407
+    weighted avg   0.78      0.75      0.76      1407
 
 
 
