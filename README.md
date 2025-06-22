@@ -17,7 +17,9 @@ Predicting and preventing customer churn is one of the most valuable strategies 
 
 This project leverages customer data from Telco, a telecommunications company, to build a machine learning model that predicts whether a customer is likely to churn.
 
-Early identification of high-risk customers allows the company to proactively engage them through tailored retention strategies which help to reduce churn, increase customer lifetime value, and improve overall profitability.
+## 🎯Goal
+
+Build machine learning models that help with early identification of high-risk customers. This will allow the Telco to proactively engage them through tailored retention strategies which help to reduce churn, increase customer lifetime value, and improve overall profitability.
 
 
 ## Dataset
