@@ -20,6 +20,8 @@ This project leverages customer data from Telco, a telecommunications company, t
 
 ## Dataset
 
+I acquired this data set from Kaggle here is a link [Telco_Customer_Churn_dataset](https://www.kaggle.com/datasets/blastchar/telco-customer-churn/data)
+
 The dataset contains comprehensive information on customer demographics, services used, billing behavior, and account status. Key features include:
 
 Demographics: gender, SeniorCitizen, Partner, Dependents
