@@ -15,7 +15,9 @@ Predicting and preventing customer churn is one of the most valuable strategies 
 
 📌 A 5% increase in customer retention can boost profits by 25% to 95% (Harvard Business Review)
 
-This project leverages customer data from Telco, a telecommunications company, to build a machine learning model that predicts whether a customer is likely to churn. Early identification of high-risk customers allows the company to proactively engage them through tailored retention strategies which help to reduce churn, increase customer lifetime value, and improve overall profitability.
+This project leverages customer data from Telco, a telecommunications company, to build a machine learning model that predicts whether a customer is likely to churn.
+
+Early identification of high-risk customers allows the company to proactively engage them through tailored retention strategies which help to reduce churn, increase customer lifetime value, and improve overall profitability.
 
 
 ## Dataset
