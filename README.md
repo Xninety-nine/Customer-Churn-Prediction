@@ -244,7 +244,7 @@ Why use SMOTE?
 - I used SMOTE because it is particularly useful for binary classification problems when a model learns from imbalanced datasets the models could develop a bias for the majority class, in this case customers who did not churn. This could lead to poor performance in classifying minority class i.e. customer who did churn. 
 
 ## Model Insights: Feature Importance
-The XGBoost model’s feature importance strongly reinforces the patterns uncovered during exploratory data analysis (EDA), providing a high degree of confidence in both the model and the underlying business insights.
+The Random Forest model’s feature importance strongly reinforces the patterns uncovered during exploratory data analysis (EDA), providing a high degree of confidence in both the model and the underlying business insights.
 
 ![image](https://github.com/user-attachments/assets/91e42d8f-3499-4a01-a9af-e97327d21d15)
 
