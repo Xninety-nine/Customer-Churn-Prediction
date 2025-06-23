@@ -68,13 +68,15 @@ df.head() and df.columns are used to explore the feature of the dataset and begi
 
  ## Distribution of Monthly Charges in Dataset
 
-![image](https://github.com/user-attachments/assets/a223df14-e9df-4e11-a120-57e683c11306)
+![image](https://github.com/user-attachments/assets/ccd48497-0ac1-4ff7-9cbf-a3d15ab9e2f9)
+
 
 
 
  ## Observations:
- - Most customers are paying between $20-$26 per month.
+ - Most customers are paying between ~$20 per month.
  - Average amount paid is $64.80 per month.
+ - Median value paid by customers is $70.35 which is higher than average. This is due to distribution of dataset.
  - Standard Deviation is ~$30
 
 ## Distribution of Monthly Charges by Churn
